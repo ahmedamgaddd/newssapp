@@ -16,7 +16,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   dynamic future;
-  NewsServices article = NewsServices();
+  NewsServices client = NewsServices();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
       ),
 
       body:  FutureBuilder(
-        future:article.getArticle(),
+        future:client.getArticle(),
         builder:(BuildContext context,AsyncSnapshot<List<Article>>snapshot) {
           if (snapshot.hasData){
             List<Article> article = snapshot.data!;
